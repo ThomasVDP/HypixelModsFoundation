@@ -13,6 +13,7 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'maven'
 
 /*
 // for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
@@ -21,7 +22,7 @@ plugins {
 }
 */
 version = "1.0"
-group= "com.tvdp.hypixelmodsfoundation.library" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "com.github.ThomasVDP" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "HypixelModsFoundationLibrary"
 
 sourceCompatibility = 8
