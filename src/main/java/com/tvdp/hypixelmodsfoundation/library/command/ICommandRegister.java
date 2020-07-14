@@ -4,5 +4,5 @@ import net.minecraft.command.ICommand;
 
 public interface ICommandRegister
 {
-    void registerCommand(ICommand command);
+    void registerCommand(String addonName, ICommand command);
 }
