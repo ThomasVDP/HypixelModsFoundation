@@ -1,4 +1,8 @@
 package com.tvdp.hypixelmodsfoundation.library.command;
 
-public class ICommandRegister {
+import net.minecraft.command.ICommand;
+
+public interface ICommandRegister
+{
+    void registerCommand(ICommand command);
 }
