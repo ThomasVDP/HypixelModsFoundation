@@ -1,0 +1,16 @@
+[
+{
+  "modid": "hypixelmodsfoundation",
+  "name": "Hypixel Mods Foundation Mod",
+  "description": "This is a mod made without any modification to the gameplay other than the possibility to let others easily change the game when playing on hypixel",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["T_VDP"],
+  "credits": "All the people who helped me develop this",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
