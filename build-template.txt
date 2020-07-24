@@ -1,0 +1,44 @@
+// For those who want the bleeding edge
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+/*
+// for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
+plugins {
+    id "net.minecraftforge.gradle.forge" version "2.0.2"
+}
+*/
+version = "1.0"
+group= "com.youraddon" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "addonName"
+
+sourceCompatibility = 8
+targetCompatibility = 8
+
+dependencies {
+    compileOnly 'com.github.ThomasVDP:HypixelModsFoundation:master-SNAPSHOT'
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+allprojects
+{
+    repositories
+    {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
