@@ -26,6 +26,12 @@ archivesBaseName = "addonName"
 sourceCompatibility = 8
 targetCompatibility = 8
 
+minecraft {
+    version = "1.8.9-11.15.1.1855"
+    runDir = "run"
+    mappings = "stable_20"
+}
+
 dependencies {
     compileOnly 'com.github.ThomasVDP:HypixelModsFoundation:master-SNAPSHOT'
 }
