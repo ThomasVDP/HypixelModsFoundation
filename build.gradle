@@ -91,16 +91,16 @@ reobf {
 }
 tasks.reobfShadowJar.mustRunAfter shadowJar
 
-/*def setMainManifestProps = { Manifest manifest->
+def setMainManifestProps = { Manifest manifest->
     manifest.attributes (
             'FMLCorePluginContainsFMLMod': 'true',
-            'FMLCorePlugin': 'temp.tvdp.hypixelmodsfoundation.coremod.MyFMLPlugin'
+            'FMLCorePlugin': 'com.tvdp.hypixelmodsfoundation.coremod.MyFMLPlugin'
     )
 }
 
 jar {
     manifest(setMainManifestProps)
-}*/
+}
 
 allprojects {
     repositories {

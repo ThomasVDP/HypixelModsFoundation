@@ -13,15 +13,15 @@ import java.util.*;
 public class EventSubscriberRegister implements IEventSubscribeRegister
 {
     private Map<String, Map<Object, List<IEventListener>>> listeners = new HashMap<>();
-    private String currentAddon = "";
+    private String currentAddonId = "";
 
     @Override
     public void registerSubscriber(Object subscriber)
     {
-        if (listeners.containsKey(this.currentAddon)) {
-            if (listeners.get(this.currentAddon).containsKey(subscriber)) return;
+        if (listeners.containsKey(this.currentAddonId)) {
+            if (listeners.get(this.currentAddonId).containsKey(subscriber)) return;
         } else {
-            listeners.put(this.currentAddon, new HashMap<>());
+            listeners.put(this.currentAddonId, new HashMap<>());
         }
 
         Set<? extends Class<?>> supers = TypeToken.of(subscriber.getClass()).getTypes().rawTypes();
@@ -47,7 +47,7 @@ public class EventSubscriberRegister implements IEventSubscribeRegister
                             throw new IllegalArgumentException("Method " + method + " has @SubscribeEvent annotation, but takes a argument that is not an Event " + eventType);
                         }
 
-                        register(eventType, subscriber, real, this.currentAddon);
+                        register(eventType, subscriber, real, this.currentAddonId);
                     }
 
                 } catch (NoSuchMethodException ignored) {
@@ -63,6 +63,9 @@ public class EventSubscriberRegister implements IEventSubscribeRegister
             Constructor<?> ctr = eventType.getConstructor();
             ctr.setAccessible(true);
             Event event = (Event)eventType.newInstance();
+            // IMPORTANT since there is no apparent other way, we first set the currentAddonId manually
+            // in order to get picked up by the CreateWrapper methodd
+            ASMEventHandlerWrapper.currentAddonId = addonName;
             ASMEventHandlerWrapper listener = new ASMEventHandlerWrapper(target, method);
             event.getListenerList().register(0, listener.getPriority(), listener);
 
@@ -76,6 +79,6 @@ public class EventSubscriberRegister implements IEventSubscribeRegister
 
     public void setAddon(String addonName)
     {
-        this.currentAddon = addonName;
+        this.currentAddonId = addonName;
     }
 }

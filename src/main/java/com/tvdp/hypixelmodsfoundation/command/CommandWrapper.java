@@ -11,7 +11,7 @@ public class CommandWrapper implements ICommand
 {
     ICommand command;
 
-    public CommandWrapper(ICommand command)
+    public CommandWrapper(ICommand command, String addonId)
     {
         this.command = command;
     }

@@ -6,10 +6,7 @@ import com.tvdp.hypixelmodsfoundation.Reference;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.ASMEventHandler;
 import net.minecraftforge.fml.common.eventhandler.IEventListener;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.Label;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Type;
+import org.objectweb.asm.*;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -23,6 +20,8 @@ public class ASMEventHandlerWrapper extends ASMEventHandler
     private static final String HANDLER_FUNC_DESC = Type.getMethodDescriptor(IEventListener.class.getDeclaredMethods()[0]);
     private static final ASMClassLoader LOADER = new ASMClassLoader();
     private static final HashMap<Method, Class<?>> cache = Maps.newHashMap();
+
+    public static String currentAddonId;
 
     public ASMEventHandlerWrapper(Object target, Method method) throws Exception {
         super(target, method, Loader.instance().getModList().stream().filter(modContainer -> modContainer.getModId().equals(Reference.MOD_ID)).findFirst().orElse(null));
@@ -66,7 +65,9 @@ public class ASMEventHandlerWrapper extends ASMEventHandler
             mv = cw.visitMethod(ACC_PUBLIC, "invoke", HANDLER_FUNC_DESC, null, null);
             mv.visitCode();
             mv.visitFieldInsn(GETSTATIC, "com/tvdp/hypixelmodsfoundation/HypixelModsFoundation", "instance", "Lcom/tvdp/hypixelmodsfoundation/HypixelModsFoundation;");
-            mv.visitFieldInsn(GETFIELD, "com/tvdp/hypixelmodsfoundation/HypixelModsFoundation", "isOnHypixel", "Z");
+            mv.visitFieldInsn(GETFIELD, "com/tvdp/hypixelmodsfoundation/HypixelModsFoundation", "activeModContainers", "Ljava/util/Map;");
+            mv.visitLdcInsn(currentAddonId);
+            mv.visitMethodInsn(INVOKEINTERFACE, "java/util/Map", "containsKey", "(Ljava/lang/Object;)Z", true);
             Label label = new Label();
             mv.visitJumpInsn(IFEQ, label);
             mv.visitVarInsn(ALOAD, 0);
