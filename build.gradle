@@ -26,8 +26,8 @@ plugins {
 }
 */
 version = "1.0"
-group= "com.tvdp.hypixelmodsfoundation" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "hypixelmodsfoundation"
+group= "com.tvdp.servermodsfoundation" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "CustomServerModsFoundation"
 
 sourceCompatibility = 8
 targetCompatibility = 8
@@ -51,7 +51,7 @@ minecraft {
 }
 
 dependencies {
-    compile 'com.github.ThomasVDP:HypixelModsFoundation:master-SNAPSHOT'
+    compile 'com.github.ThomasVDP:MinecraftServerModsFoundation:master-SNAPSHOT'
 }
 
 shadowJar {
@@ -94,7 +94,7 @@ tasks.reobfShadowJar.mustRunAfter shadowJar
 def setMainManifestProps = { Manifest manifest->
     manifest.attributes (
             'FMLCorePluginContainsFMLMod': 'true',
-            'FMLCorePlugin': 'com.tvdp.hypixelmodsfoundation.coremod.MyFMLPlugin'
+            'FMLCorePlugin': 'com.tvdp.servermodsfoundation.coremod.MyFMLPlugin'
     )
 }
 

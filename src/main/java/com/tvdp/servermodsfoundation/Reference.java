@@ -1,4 +1,4 @@
-package com.tvdp.hypixelmodsfoundation;
+package com.tvdp.servermodsfoundation;
 
 public class Reference
 {

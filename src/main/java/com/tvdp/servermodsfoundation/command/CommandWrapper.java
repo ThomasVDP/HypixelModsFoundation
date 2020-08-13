@@ -1,4 +1,4 @@
-package com.tvdp.hypixelmodsfoundation.command;
+package com.tvdp.servermodsfoundation.command;
 
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;

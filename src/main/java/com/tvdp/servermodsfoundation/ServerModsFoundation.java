@@ -1,4 +1,4 @@
-package com.tvdp.hypixelmodsfoundation;
+package com.tvdp.servermodsfoundation;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -6,10 +6,10 @@ import com.google.common.collect.Maps;
 import com.google.common.eventbus.EventBus;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.tvdp.hypixelmodsfoundation.container.AddonModContainer;
-import com.tvdp.hypixelmodsfoundation.library.HypixelModBase;
-import com.tvdp.hypixelmodsfoundation.register.CommandRegister;
-import com.tvdp.hypixelmodsfoundation.register.EventSubscriberRegister;
+import com.tvdp.servermodsfoundation.container.AddonModContainer;
+import com.tvdp.servermodsfoundation.library.ServerModBase;
+import com.tvdp.servermodsfoundation.register.CommandRegister;
+import com.tvdp.servermodsfoundation.register.EventSubscriberRegister;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.LoadController;
 import net.minecraftforge.fml.common.Loader;
@@ -26,7 +26,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
-import java.net.*;
+import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,7 +45,7 @@ public class ServerModsFoundation
     /**
      * list of the instantiated mod objects
      */
-    private final Map<String, HypixelModBase> addonObjects = new HashMap<>();
+    private final Map<String, ServerModBase> addonObjects = new HashMap<>();
     /**
      * list of ALL the modContainers
      */
@@ -252,8 +255,8 @@ public class ServerModsFoundation
             temporary.forEach((addonName, className) -> {
                 try {
                     Class classToLoad = Class.forName(className, true, Loader.instance().getModClassLoader());
-                    if (HypixelModBase.class.isAssignableFrom(classToLoad)) {
-                        this.addonObjects.put(addonName, (HypixelModBase)classToLoad.newInstance());
+                    if (ServerModBase.class.isAssignableFrom(classToLoad)) {
+                        this.addonObjects.put(addonName, (ServerModBase) classToLoad.newInstance());
                     } else {
                         System.out.println("ERROR: Couldn't load hypixel addon! Invalid class type!");
                     }

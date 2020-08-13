@@ -1,9 +1,9 @@
-package com.tvdp.hypixelmodsfoundation.register;
+package com.tvdp.servermodsfoundation.register;
 
 import com.google.common.collect.Lists;
-import com.tvdp.hypixelmodsfoundation.ServerModsFoundation;
-import com.tvdp.hypixelmodsfoundation.command.CommandWrapper;
-import com.tvdp.hypixelmodsfoundation.library.command.ICommandRegister;
+import com.tvdp.servermodsfoundation.ServerModsFoundation;
+import com.tvdp.servermodsfoundation.command.CommandWrapper;
+import com.tvdp.servermodsfoundation.library.command.ICommandRegister;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraftforge.client.ClientCommandHandler;

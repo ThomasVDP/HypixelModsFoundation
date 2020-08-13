@@ -1,7 +1,7 @@
-package com.tvdp.hypixelmodsfoundation.register;
+package com.tvdp.servermodsfoundation.register;
 
 import com.google.common.reflect.TypeToken;
-import com.tvdp.hypixelmodsfoundation.library.events.IEventSubscribeRegister;
+import com.tvdp.servermodsfoundation.library.events.IEventSubscribeRegister;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.IEventListener;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

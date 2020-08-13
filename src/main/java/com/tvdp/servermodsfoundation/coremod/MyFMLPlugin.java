@@ -1,10 +1,8 @@
-package com.tvdp.hypixelmodsfoundation.coremod;
+package com.tvdp.servermodsfoundation.coremod;
 
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.tvdp.hypixelmodsfoundation.container.AddonModContainer;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
