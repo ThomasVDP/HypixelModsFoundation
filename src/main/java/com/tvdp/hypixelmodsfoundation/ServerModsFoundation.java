@@ -35,10 +35,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
-public class HypixelModsFoundation
+public class ServerModsFoundation
 {
-    private final Map<String, String> addonExcludeServerLinks = new HashMap<>();
-    private final Map<String, String> addonIncludeServerLinks = new HashMap<>();
+    private final Map<String, List<String>> addonExcludeServerLinks = new HashMap<>();
+    private final Map<String, List<String>> addonIncludeServerLinks = new HashMap<>();
     /**
      * list of the instantiated mod objects
      */
@@ -67,9 +67,9 @@ public class HypixelModsFoundation
     private Field modControllerField;
 
     @Mod.Instance
-    public static HypixelModsFoundation instance;
+    public static ServerModsFoundation instance;
 
-    public HypixelModsFoundation()
+    public ServerModsFoundation()
     {
         this.loadAddons();
 
@@ -134,17 +134,17 @@ public class HypixelModsFoundation
         /*
           Get the addon if in an included server
          */
-        addonIncludeServerLinks.forEach((host, addonId) -> {
+        addonIncludeServerLinks.forEach((host, addonIds) -> {
             if (hostname.contains(host)) {
-                activeModContainers.put(addonId, addonContainers.get(addonId));
+                addonIds.forEach(id -> activeModContainers.put(id, addonContainers.get(id)));
             }
         });
         /*
           Get the addon if not on an excluded server
          */
-        addonExcludeServerLinks.forEach((host, addonId) -> {
+        addonExcludeServerLinks.forEach((host, addonIds) -> {
             if (!hostname.contains(host)) {
-                activeModContainers.put(addonId, addonContainers.get(addonId));
+                addonIds.forEach(id -> activeModContainers.put(id, addonContainers.get(id)));
             }
         });
 
@@ -177,7 +177,7 @@ public class HypixelModsFoundation
 
     private void loadAddons()
     {
-        File addonDir = new File(Loader.instance().getConfigDir().getParentFile().getAbsolutePath() + "/HypixelMods");
+        File addonDir = new File(Loader.instance().getConfigDir().getParentFile().getAbsolutePath() + "/CustomServerMods");
         if (addonDir.exists() && addonDir.isDirectory()) {
             List<File> files = Lists.newArrayList(addonDir.listFiles()).stream().filter(file -> file.getName().matches(".*\\.jar")).collect(Collectors.toList());
 
@@ -205,14 +205,26 @@ public class HypixelModsFoundation
                             if (obj.get("includeServers").getAsJsonArray().size() != 0) {
                                 obj.get("includeServers").getAsJsonArray().forEach(element -> {
                                     String hostname = new InetSocketAddress(element.getAsString(), 0).getHostString();
-                                    addonIncludeServerLinks.put(hostname, addonName);
+                                    if (addonIncludeServerLinks.containsKey(hostname)) {
+                                        addonIncludeServerLinks.get(hostname).add(addonName);
+                                    } else {
+                                        List<String> list = new ArrayList<>();
+                                        list.add(addonName);
+                                        addonIncludeServerLinks.put(hostname, list);
+                                    }
                                 });
                             }
                         } else if (obj.has("excludeServers")) {
                             if (obj.get("excludeServers").getAsJsonArray().size() != 0) {
                                 obj.get("excludeServers").getAsJsonArray().forEach(element -> {
                                     String hostname = new InetSocketAddress(element.getAsString(), 0).getHostString();
-                                    addonExcludeServerLinks.put(hostname, addonName);
+                                    if (addonExcludeServerLinks.containsKey(hostname)) {
+                                        addonExcludeServerLinks.get(hostname).add(addonName);
+                                    } else {
+                                        List<String> list = new ArrayList<>();
+                                        list.add(addonName);
+                                        addonExcludeServerLinks.put(hostname, list);
+                                    }
                                 });
                             }
                         }

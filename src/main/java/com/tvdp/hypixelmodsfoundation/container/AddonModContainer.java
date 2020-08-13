@@ -23,7 +23,7 @@ public class AddonModContainer implements ModContainer
     public AddonModContainer(JsonObject infoJson)
     {
         md = new ModMetadata();
-        md.modId = "hypixelmod:" + infoJson.get("id").getAsString();
+        md.modId = "servermod:" + infoJson.get("id").getAsString();
         md.name = infoJson.get("name").getAsString();
         md.description = infoJson.get("description").getAsString();
         md.version = infoJson.get("version").getAsString();

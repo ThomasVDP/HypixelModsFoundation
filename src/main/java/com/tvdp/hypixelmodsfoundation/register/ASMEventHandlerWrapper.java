@@ -1,7 +1,6 @@
 package com.tvdp.hypixelmodsfoundation.register;
 
 import com.google.common.collect.Maps;
-import com.tvdp.hypixelmodsfoundation.HypixelModsFoundation;
 import com.tvdp.hypixelmodsfoundation.Reference;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.ASMEventHandler;

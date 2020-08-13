@@ -1,7 +1,7 @@
 package com.tvdp.hypixelmodsfoundation.register;
 
 import com.google.common.collect.Lists;
-import com.tvdp.hypixelmodsfoundation.HypixelModsFoundation;
+import com.tvdp.hypixelmodsfoundation.ServerModsFoundation;
 import com.tvdp.hypixelmodsfoundation.command.CommandWrapper;
 import com.tvdp.hypixelmodsfoundation.library.command.ICommandRegister;
 import net.minecraft.command.CommandHandler;
@@ -67,7 +67,7 @@ public class CommandRegister implements ICommandRegister
 
         //add active commands
         addonToCommandName.forEach((addonId, commandNames) -> {
-            if (HypixelModsFoundation.instance.activeModContainers.containsKey(addonId)) {
+            if (ServerModsFoundation.instance.activeModContainers.containsKey(addonId)) {
                 commandNames.forEach(name -> {
                     ClientCommandHandler.instance.registerCommand(commandSet.get(name));
                 });

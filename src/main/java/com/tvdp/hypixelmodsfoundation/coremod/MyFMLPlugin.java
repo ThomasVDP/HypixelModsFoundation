@@ -41,7 +41,7 @@ public class MyFMLPlugin implements IFMLLoadingPlugin
             e.printStackTrace();
             return new String[0];
         }
-        File addonDir = new File(minecraftDir + "/HypixelMods");
+        File addonDir = new File(minecraftDir + "/CustomServerMods");
         if (addonDir.exists() && addonDir.isDirectory()) {
             List<File> files = Lists.newArrayList(addonDir.listFiles()).stream().filter(file -> file.getName().matches(".*\\.jar")).collect(Collectors.toList());
 

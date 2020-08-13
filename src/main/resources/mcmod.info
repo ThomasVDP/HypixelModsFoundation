@@ -1,14 +1,14 @@
 [
 {
-  "modid": "hypixelmodsfoundation",
-  "name": "Hypixel Mods Foundation Mod",
-  "description": "This is a mod made without any modification to the gameplay other than the possibility to let others easily change the game when playing on hypixel",
+  "modid": "servermodsfoundation",
+  "name": "Custom ServerMods Foundation Mod",
+  "description": "This is a mod made without any modification to the gameplay other than the possibility to let developers easily change the game when playing on specific servers!",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["T_VDP"],
-  "credits": "All the people who helped me develop this",
+  "credits": "Forge and FML",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
