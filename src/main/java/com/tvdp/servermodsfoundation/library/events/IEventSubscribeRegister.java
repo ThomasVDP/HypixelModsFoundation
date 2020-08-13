@@ -1,4 +1,4 @@
-package com.tvdp.hypixelmodsfoundation.library.events;
+package com.tvdp.servermodsfoundation.library.events;
 
 public interface IEventSubscribeRegister
 {

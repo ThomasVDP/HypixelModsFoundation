@@ -1,9 +1,9 @@
-package com.tvdp.hypixelmodsfoundation.library;
+package com.tvdp.servermodsfoundation.library;
 
-import com.tvdp.hypixelmodsfoundation.library.command.ICommandRegister;
-import com.tvdp.hypixelmodsfoundation.library.events.IEventSubscribeRegister;
+import com.tvdp.servermodsfoundation.library.command.ICommandRegister;
+import com.tvdp.servermodsfoundation.library.events.IEventSubscribeRegister;
 
-public interface HypixelModBase
+public interface ServerModBase
 {
     /**
      * Called when the event subscribers are initialized

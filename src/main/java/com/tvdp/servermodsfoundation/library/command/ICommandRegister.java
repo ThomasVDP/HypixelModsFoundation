@@ -1,4 +1,4 @@
-package com.tvdp.hypixelmodsfoundation.library.command;
+package com.tvdp.servermodsfoundation.library.command;
 
 import net.minecraft.command.ICommand;
 
