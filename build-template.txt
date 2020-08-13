@@ -33,7 +33,7 @@ minecraft {
 }
 
 dependencies {
-    compileOnly 'com.github.ThomasVDP:HypixelModsFoundation:master-SNAPSHOT'
+    compileOnly 'com.github.ThomasVDP:MinecraftServerModsFoundation:master-SNAPSHOT'
 }
 
 configurations.all {

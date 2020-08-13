@@ -23,7 +23,7 @@ plugins {
 */
 version = "1.0"
 group= "com.github.ThomasVDP" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "HypixelModsFoundationLibrary"
+archivesBaseName = "ServerModsFoundationLibrary"
 
 sourceCompatibility = 8
 targetCompatibility = 8
