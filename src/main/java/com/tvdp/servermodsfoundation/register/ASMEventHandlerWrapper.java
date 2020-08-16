@@ -63,8 +63,8 @@ public class ASMEventHandlerWrapper extends ASMEventHandler
         {
             mv = cw.visitMethod(ACC_PUBLIC, "invoke", HANDLER_FUNC_DESC, null, null);
             mv.visitCode();
-            mv.visitFieldInsn(GETSTATIC, "com/tvdp/hypixelmodsfoundation/HypixelModsFoundation", "instance", "Lcom/tvdp/hypixelmodsfoundation/HypixelModsFoundation;");
-            mv.visitFieldInsn(GETFIELD, "com/tvdp/hypixelmodsfoundation/HypixelModsFoundation", "activeModContainers", "Ljava/util/Map;");
+            mv.visitFieldInsn(GETSTATIC, "com/tvdp/servermodsfoundation/ServerModsFoundation", "instance", "Lcom/tvdp/servermodsfoundation/ServerModsFoundation;");
+            mv.visitFieldInsn(GETFIELD, "com/tvdp/servermodsfoundation/ServerModsFoundation", "activeModContainers", "Ljava/util/Map;");
             mv.visitLdcInsn(currentAddonId);
             mv.visitMethodInsn(INVOKEINTERFACE, "java/util/Map", "containsKey", "(Ljava/lang/Object;)Z", true);
             Label label = new Label();
