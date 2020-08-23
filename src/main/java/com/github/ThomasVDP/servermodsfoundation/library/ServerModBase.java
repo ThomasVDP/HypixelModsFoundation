@@ -1,7 +1,7 @@
-package com.tvdp.servermodsfoundation.library;
+package com.github.ThomasVDP.servermodsfoundation.library;
 
-import com.tvdp.servermodsfoundation.library.command.ICommandRegister;
-import com.tvdp.servermodsfoundation.library.events.IEventSubscribeRegister;
+import com.github.ThomasVDP.servermodsfoundation.library.command.ICommandRegister;
+import com.github.ThomasVDP.servermodsfoundation.library.events.IEventSubscribeRegister;
 
 public interface ServerModBase
 {

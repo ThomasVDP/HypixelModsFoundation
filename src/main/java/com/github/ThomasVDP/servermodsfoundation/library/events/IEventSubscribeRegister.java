@@ -1,4 +1,4 @@
-package com.tvdp.servermodsfoundation.library.events;
+package com.github.ThomasVDP.servermodsfoundation.library.events;
 
 public interface IEventSubscribeRegister
 {

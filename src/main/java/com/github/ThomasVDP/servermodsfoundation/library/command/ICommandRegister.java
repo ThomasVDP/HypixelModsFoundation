@@ -1,4 +1,4 @@
-package com.tvdp.servermodsfoundation.library.command;
+package com.github.ThomasVDP.servermodsfoundation.library.command;
 
 import net.minecraft.command.ICommand;
 
