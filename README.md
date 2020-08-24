@@ -18,7 +18,7 @@ Put all your extensions/mods made for this mod in `/path/to/minecraft/CustomServ
 That's it, the mod will start working instantly!
 
 ## Getting Started (for developers)
-This mod's API can be added to your project using JitPack.
+This mod's API can be added to your project using JitPack. (use tag v1.0.0-library)
 [![](https://jitpack.io/v/ThomasVDP/MinecraftServerModsFoundation.svg)](https://jitpack.io/#ThomasVDP/MinecraftServerModsFoundation)
 
 Your `main instance` should implement the `ServerModBase` interface.
