@@ -31,8 +31,8 @@ The addon/mod requires a `info.json` at the root of the jar-file.
 It contains name-value pairs to identify the mod:
 ```json
 {
-	"id": "your mods id",
-	"name": "your mods display name",
+	"id": "your mod's id",
+	"name": "your mod's display name",
 	"description": "A description for you mod",
 	"version": "your mod's version",
 	"authorList": [ "all", "the", "authors" ],
