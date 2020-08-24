@@ -11,7 +11,7 @@ This mod tries to answer those questions in two ways:
 - `ICommand`-s will only be registered on the feature developer's server(s) of choice
 
 ## Getting Started (for Forge users)
-Download the latest [release](https://github.com/ThomasVDP/MinecraftServerModsFoundation/releases) and put the `CustomServerModsFoundation-*.*.jar`-file in your Minecraft mods directory!
+Download the latest [release](https://github.com/ThomasVDP/MinecraftServerModsFoundation/releases) (the one with the correctly name jar-file)and put the `CustomServerModsFoundation-*.*.jar`-file in your Minecraft mods directory!
 
 Put all your extensions/mods made for this mod in `/path/to/minecraft/CustomServerMods/`!
 
