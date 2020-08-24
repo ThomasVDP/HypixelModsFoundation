@@ -51,7 +51,7 @@ minecraft {
 }
 
 dependencies {
-    compile 'com.github.ThomasVDP:MinecraftServerModsFoundation:master-SNAPSHOT'
+    compile 'com.github.ThomasVDP:MinecraftServerModsFoundation:v1.0.0-library'
 }
 
 shadowJar {
