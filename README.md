@@ -1,9 +1,9 @@
 # Minecraft Custom Server Mods (Forge 1.8.9)
-This is a forge mod to automatically enable and disable mods on certain servers.
+This is a forge mod to automatically enable and disable *client-side* mods on certain servers.
 
 ## Main idea
 Don't you sometimes have that feeling of missing features on a server?
-And wouldn't such feature developers want those features to only be active on certain servers?
+And wouldn't developers of such features want them to only be active on certain servers?
 
 This mod tries to answer those questions in two ways:
 
@@ -15,7 +15,7 @@ Download the latest [release](https://github.com/ThomasVDP/MinecraftServerModsFo
 
 Put all your extensions/mods made for this mod in `/path/to/minecraft/CustomServerMods/`!
 
-That's it, the mod is start working instantly!
+That's it, the mod will start working instantly!
 
 ## Getting Started (for developers)
 This mod's API can be added to your project using JitPack.
