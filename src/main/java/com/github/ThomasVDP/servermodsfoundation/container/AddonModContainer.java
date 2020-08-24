@@ -1,4 +1,4 @@
-package com.tvdp.servermodsfoundation.container;
+package com.github.ThomasVDP.servermodsfoundation.container;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;

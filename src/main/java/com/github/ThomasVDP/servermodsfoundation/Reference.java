@@ -1,4 +1,4 @@
-package com.tvdp.servermodsfoundation;
+package com.github.ThomasVDP.servermodsfoundation;
 
 public class Reference
 {

@@ -1,15 +1,15 @@
-package com.tvdp.servermodsfoundation;
+package com.github.ThomasVDP.servermodsfoundation;
 
+import com.github.ThomasVDP.servermodsfoundation.container.AddonModContainer;
+import com.github.ThomasVDP.servermodsfoundation.library.ServerModBase;
+import com.github.ThomasVDP.servermodsfoundation.register.CommandRegister;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.eventbus.EventBus;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.tvdp.servermodsfoundation.container.AddonModContainer;
-import com.tvdp.servermodsfoundation.library.ServerModBase;
-import com.tvdp.servermodsfoundation.register.CommandRegister;
-import com.tvdp.servermodsfoundation.register.EventSubscriberRegister;
+import com.github.ThomasVDP.servermodsfoundation.register.EventSubscriberRegister;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.LoadController;
 import net.minecraftforge.fml.common.Loader;
@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = "after:*")
 public class ServerModsFoundation
 {
     private final Map<String, List<String>> addonExcludeServerLinks = new HashMap<>();

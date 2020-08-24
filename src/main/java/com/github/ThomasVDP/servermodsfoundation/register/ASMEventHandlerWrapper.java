@@ -1,7 +1,7 @@
-package com.tvdp.servermodsfoundation.register;
+package com.github.ThomasVDP.servermodsfoundation.register;
 
 import com.google.common.collect.Maps;
-import com.tvdp.servermodsfoundation.Reference;
+import com.github.ThomasVDP.servermodsfoundation.Reference;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.ASMEventHandler;
 import net.minecraftforge.fml.common.eventhandler.IEventListener;
@@ -63,8 +63,8 @@ public class ASMEventHandlerWrapper extends ASMEventHandler
         {
             mv = cw.visitMethod(ACC_PUBLIC, "invoke", HANDLER_FUNC_DESC, null, null);
             mv.visitCode();
-            mv.visitFieldInsn(GETSTATIC, "com/tvdp/servermodsfoundation/ServerModsFoundation", "instance", "Lcom/tvdp/servermodsfoundation/ServerModsFoundation;");
-            mv.visitFieldInsn(GETFIELD, "com/tvdp/servermodsfoundation/ServerModsFoundation", "activeModContainers", "Ljava/util/Map;");
+            mv.visitFieldInsn(GETSTATIC, "com/github/ThomasVDP/servermodsfoundation/ServerModsFoundation", "instance", "Lcom/github/ThomasVDP/servermodsfoundation/ServerModsFoundation;");
+            mv.visitFieldInsn(GETFIELD, "com/github/ThomasVDP/servermodsfoundation/ServerModsFoundation", "activeModContainers", "Ljava/util/Map;");
             mv.visitLdcInsn(currentAddonId);
             mv.visitMethodInsn(INVOKEINTERFACE, "java/util/Map", "containsKey", "(Ljava/lang/Object;)Z", true);
             Label label = new Label();

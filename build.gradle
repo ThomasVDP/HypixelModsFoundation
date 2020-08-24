@@ -94,7 +94,7 @@ tasks.reobfShadowJar.mustRunAfter shadowJar
 def setMainManifestProps = { Manifest manifest->
     manifest.attributes (
             'FMLCorePluginContainsFMLMod': 'true',
-            'FMLCorePlugin': 'com.tvdp.servermodsfoundation.coremod.MyFMLPlugin'
+            'FMLCorePlugin': 'com.github.ThomasVDP.servermodsfoundation.coremod.MyFMLPlugin'
     )
 }
 

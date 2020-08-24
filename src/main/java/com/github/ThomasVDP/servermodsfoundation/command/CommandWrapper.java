@@ -1,4 +1,4 @@
-package com.tvdp.servermodsfoundation.command;
+package com.github.ThomasVDP.servermodsfoundation.command;
 
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;

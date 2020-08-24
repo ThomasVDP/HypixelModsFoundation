@@ -1,9 +1,9 @@
-package com.tvdp.servermodsfoundation.register;
+package com.github.ThomasVDP.servermodsfoundation.register;
 
+import com.github.ThomasVDP.servermodsfoundation.command.CommandWrapper;
+import com.github.ThomasVDP.servermodsfoundation.library.command.ICommandRegister;
 import com.google.common.collect.Lists;
-import com.tvdp.servermodsfoundation.ServerModsFoundation;
-import com.tvdp.servermodsfoundation.command.CommandWrapper;
-import com.tvdp.servermodsfoundation.library.command.ICommandRegister;
+import com.github.ThomasVDP.servermodsfoundation.ServerModsFoundation;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommand;
 import net.minecraftforge.client.ClientCommandHandler;
