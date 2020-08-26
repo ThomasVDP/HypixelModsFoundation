@@ -37,11 +37,17 @@ It contains name-value pairs to identify the mod:
 	"version": "your mod's version",
 	"authorList": [ "all", "the", "authors" ],
 	"credits": "possible credits",
-	"guiFactory": "full name of you GuiFactory-class"
+	"guiFactory": "full name of you GuiFactory-class",
+	"includeServers": [ "whitelisted", "servers" ],
+	"excludeServers": [ "blacklisted", "servers" ]
 }
 ```
 
 Everything is required except for the `"guiFactory"` pair.
+This `"guiFactory"` name will be used to provide an in-game mod configuration screen in `Mod Options`
+
+`"includeServers"` takes priority over `"excludeServers"`!
+
 This `"guiFactory"` name will be used to provide an in-game mod configuration screen in `Mod Options`
 
 
