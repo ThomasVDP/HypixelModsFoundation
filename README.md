@@ -46,9 +46,9 @@ It contains name-value pairs to identify the mod:
 Everything is required except for the `"guiFactory"` pair.
 This `"guiFactory"` name will be used to provide an in-game mod configuration screen in `Mod Options`
 
-`"includeServers"` takes priority over `"excludeServers"`!
-
 This `"guiFactory"` name will be used to provide an in-game mod configuration screen in `Mod Options`
+
+`"includeServers"` takes priority over `"excludeServers"`!
 
 
 That's all you need to know!
