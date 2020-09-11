@@ -34,7 +34,7 @@ public class MyFMLPlugin implements IFMLLoadingPlugin
             Field mcHomeField = CoreModManager.class.getDeclaredField("mcDir");
             mcHomeField.setAccessible(true);
 
-            File addonDir = new File(((File)mcHomeField.get(null)).getAbsolutePath() + "/CustomServerMods");
+            File addonDir = new File(((File)mcHomeField.get(null)).getAbsolutePath() + File.separator + "CustomServerMods");
             if (addonDir.exists() && addonDir.isDirectory()) {
                 List<File> files = Lists.newArrayList(addonDir.listFiles()).stream().filter(file -> file.getName().matches(".*\\.jar")).collect(Collectors.toList());
 

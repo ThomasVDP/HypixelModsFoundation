@@ -13,10 +13,6 @@ buildscript {
     }
 }
 
-plugins {
-    id "com.github.johnrengelman.shadow" version "4.0.4"
-}
-
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 /*
@@ -32,11 +28,6 @@ archivesBaseName = "CustomServerModsFoundation"
 sourceCompatibility = 8
 targetCompatibility = 8
 
-configurations {
-    shadow
-    compile.extendsFrom shadow
-}
-
 minecraft {
     version = "1.8.9-11.15.1.1855"
     runDir = "run"
@@ -50,16 +41,24 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
-dependencies {
-    compile 'com.github.ThomasVDP:MinecraftServerModsFoundation:v1.0.0-library'
+configurations {
+    shade
+    compile.extendsFrom shade
 }
 
-shadowJar {
-    archiveName = tasks.jar.archiveName
-    configurations = [project.configurations.compile, project.configurations.shadow]
+dependencies {
+    shade 'com.github.ThomasVDP:MinecraftServerModsFoundation:v1.0.0-library'
 }
-jar.dependsOn shadowJar
-jar.enabled = false
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
 
 processResources
 {
@@ -81,15 +80,13 @@ processResources
     }
 }
 
-reobf {
-    shadowJar {
-        mappingType = "SEARGE"
-    }
-    jar {
-        useNotchSrg()
+jar {
+    configurations.shade.each { dep ->
+        from(project.zipTree(dep)) {
+            exclude 'META-INF', 'META-INF/**'
+        }
     }
 }
-tasks.reobfShadowJar.mustRunAfter shadowJar
 
 def setMainManifestProps = { Manifest manifest->
     manifest.attributes (
@@ -100,14 +97,4 @@ def setMainManifestProps = { Manifest manifest->
 
 jar {
     manifest(setMainManifestProps)
-}
-
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
-}
-
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }

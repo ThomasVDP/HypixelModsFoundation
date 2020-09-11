@@ -28,7 +28,7 @@ public class MyFMLAccessTransformer extends AccessTransformer
             mcDirField.setAccessible(true);
             File mcDir = (File)mcDirField.get(null);
 
-            File addonDir = new File(mcDir.getAbsolutePath() + "/CustomServerMods");
+            File addonDir = new File(mcDir.getAbsolutePath() + File.separator + "CustomServerMods");
             if (addonDir.exists() && addonDir.isDirectory()) {
                 List<File> files = Lists.newArrayList(addonDir.listFiles()).stream().filter(file -> file.getName().matches(".*\\.jar")).collect(Collectors.toList());
 

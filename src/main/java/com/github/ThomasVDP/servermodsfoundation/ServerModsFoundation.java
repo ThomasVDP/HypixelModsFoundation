@@ -180,7 +180,7 @@ public class ServerModsFoundation
 
     private void loadAddons()
     {
-        File addonDir = new File(Loader.instance().getConfigDir().getParentFile().getAbsolutePath() + "/CustomServerMods");
+        File addonDir = new File(Loader.instance().getConfigDir().getParentFile().getAbsolutePath() + File.separator + "CustomServerMods");
         if (addonDir.exists() && addonDir.isDirectory()) {
             List<File> files = Lists.newArrayList(addonDir.listFiles()).stream().filter(file -> file.getName().matches(".*\\.jar")).collect(Collectors.toList());
 
